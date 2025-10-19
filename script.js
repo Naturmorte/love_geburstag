@@ -1,8 +1,10 @@
+// 🌸 Відкрити сюрприз
 function showSurprise() {
   document.getElementById('surprise').classList.remove('hidden');
   alert('Кохаю тебе 💘');
 }
 
+// 🐵 Масив кнопок з мемами
 const funnyImages = [
   { text: "што ета за пакємон?, ета міланаааа", url: "https://i.pinimg.com/736x/25/63/ab/2563abd99a6453e85cd7ea937f4bac44.jpg" },
   { text: "женщінс шушукатса, тіпа іспанка(нє)", url: "https://i.pinimg.com/736x/40/c4/62/40c462a68e8ab6553349d0703dcbd1bd.jpg" },
@@ -21,43 +23,51 @@ const funnyImages = [
   { text: "ми форевер!!", url: "https://i.pinimg.com/736x/90/1c/96/901c9618a20ad335ca5fb9449581d455.jpg" }
 ];
 
-// Генерація кнопок
+// 🧡 Генерація кнопок
 const buttonsContainer = document.getElementById('buttons-container');
-funnyImages.forEach((item, index) => {
+funnyImages.forEach((item) => {
   const btn = document.createElement('button');
   btn.textContent = item.text;
   btn.onclick = () => addFunnyImage(item.url);
   buttonsContainer.appendChild(btn);
 });
 
-// Додавання картинки
+// 🖼️ Додавання картинки на екран
 function addFunnyImage(url) {
+  const container = document.getElementById('funny-container');
+
   const img = document.createElement('img');
   img.src = url;
   img.classList.add('funny-img');
 
-  const container = document.getElementById('funny-container');
+  // Рандомна позиція
   const maxX = container.clientWidth - 200;
   const maxY = container.clientHeight - 200;
-
   const randomX = Math.max(0, Math.floor(Math.random() * maxX));
   const randomY = Math.max(0, Math.floor(Math.random() * maxY));
 
-  img.style.left = randomX + 'px';
-  img.style.top = randomY + 'px';
+  img.style.left = `${randomX}px`;
+  img.style.top = `${randomY}px`;
 
   container.appendChild(img);
 }
 
+// 🧼 Очистити всі картинки
+function clearImages() {
+  const container = document.getElementById('funny-container');
+  container.innerHTML = '';
+}
+
 // 🐒 Бібізякові жарти
 const jokes = [
-  "Бібізяка ваєвала, а ти какашка",
-  "Якщо хтось скаже, що ти не бібізяка — він просто ревнує 😎😎😎😎😎😎😎😎😎😎😎😎",
-  "Кохаю свою бібізяку навіть коли вона кусається 🐒💋, а мілана кусаааається",
-  "Якщо тебе обійняти, можна отримати +100 до щастя, але ти какулька така",
-  "Ти офіційно самі какашка бібізянка🎓🐵",
+  "Бібізяка ваєвала, а ти какашка 💩",
+  "Якщо хтось скаже, що ти не бібізяка — він просто ревнує 😎",
+  "Кохаю свою бібізяку навіть коли вона кусається 🐒💋 (а мілана кусаааається 😤)",
+  "Якщо тебе обійняти, можна отримати +100 до щастя, але ти какулька така 🫢",
+  "Ти офіційно самі какашка бібізянка 🎓🐵",
 ];
 
+// ✨ Показ випадкового жарту
 function showRandomJoke() {
   const randomIndex = Math.floor(Math.random() * jokes.length);
   document.getElementById('jokeText').textContent = jokes[randomIndex];
