@@ -1,0 +1,27 @@
+body {
+  text-align: center;
+  background: linear-gradient(to right, #ffdde1, #ee9ca7);
+  font-family: 'Comic Sans MS', cursive;
+  color: #fff;
+  padding-top: 50px;
+}
+
+button {
+  padding: 10px 20px;
+  background: #ff4b5c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+.hidden {
+  display: none;
+}
+
+img {
+  margin-top: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
