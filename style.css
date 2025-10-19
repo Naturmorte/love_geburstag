@@ -7,21 +7,56 @@ body {
 }
 
 button {
-  padding: 10px 20px;
+  padding: 10px 15px;
   background: #ff4b5c;
   color: white;
   border: none;
   cursor: pointer;
   border-radius: 8px;
-  font-size: 18px;
+  font-size: 16px;
+  margin: 5px;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
 }
 
 .hidden {
   display: none;
 }
 
-img {
+#funny-container {
+  position: relative;
   margin-top: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  min-height: 300px;
+}
+
+.funny-img {
+  max-width: 200px;
+  max-height: 200px;
+  position: absolute;
+  transition: transform 0.3s ease;
+}
+
+.funny-img:hover {
+  transform: scale(1.2) rotate(5deg);
+}
+
+#buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px 0;
+  gap: 10px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#jokeText {
+  margin-top: 15px;
+  font-size: 20px;
+  color: #fffbea;
+  font-style: italic;
 }
